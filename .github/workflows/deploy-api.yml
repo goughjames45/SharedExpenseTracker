@@ -15,16 +15,16 @@ jobs:
     - name: build project
       run: cd /API && npm run build
 
-    - name: Generate deployment package
-      run: zip -r expenserestapi.zip API -x "/node_modules" 
+    # - name: Generate deployment package
+    #   run: zip -r expenseapi.zip API -x "/node_modules" 
 
-    - name: Deploy to EB
-      uses: einaregilsson/beanstalk-deploy@v20
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: SharedExpenseRESTApi
-        environment_name: Sharedexpenserestapi-env
-        version_label: 12345
-        region: us-east-1
-        deployment_package: expenseapi.zip
+    # - name: Deploy to EB
+    #   uses: einaregilsson/beanstalk-deploy@v20
+    #   with:
+    #     aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     application_name: SharedExpenseRESTApi
+    #     environment_name: Sharedexpenserestapi-env
+    #     version_label: 12345
+    #     region: us-east-1
+    #     deployment_package: expenseapi.zip
