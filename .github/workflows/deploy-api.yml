@@ -12,12 +12,15 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v2
       
+    - name: Install dependencies
+      run: npm install
+
     - name: build project
       working-directory: ./API
       run: npm run build
 
-    # - name: Generate deployment package
-    #   run: zip -r expenseapi.zip API -x "/node_modules" 
+    - name: Generate deployment package
+      run: zip -r expenseapi.zip ./API -x "/node_modules" 
 
     # - name: Deploy to EB
     #   uses: einaregilsson/beanstalk-deploy@v20
