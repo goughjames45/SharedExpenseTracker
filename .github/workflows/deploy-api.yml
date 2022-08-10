@@ -13,7 +13,8 @@ jobs:
       uses: actions/checkout@v2
       
     - name: build project
-      run: cd /API && npm run build
+      working-directory: ./API
+      run: npm run build
 
     # - name: Generate deployment package
     #   run: zip -r expenseapi.zip API -x "/node_modules" 
