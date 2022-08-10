@@ -1,26 +1,30 @@
 /** source/controllers/posts.ts */
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from "express";
 
 interface Transaction {
-    paidBy: String;
-    amount: Number;
-    description: String;
+  paidBy: String;
+  amount: Number;
+  description: String;
 }
 
 // getting all posts
-const getTransactions = async (req: Request, res: Response, next: NextFunction) => {
-    // get some posts
-    //let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
-    let transactions: [Transaction] = [
-        {
-            paidBy: "James",
-            amount: 200,
-            description: "Rent for the month of never"
-        }
-    ];
-    return res.status(200).json({
-        message: transactions
-    });
+const getTransactions = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  // get some posts
+  //let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+  let transactions: [Transaction] = [
+    {
+      paidBy: "James",
+      amount: 200,
+      description: "Rent for the month of never",
+    },
+  ];
+  return res.status(200).json({
+    message: transactions,
+  });
 };
 
 // // getting a single post

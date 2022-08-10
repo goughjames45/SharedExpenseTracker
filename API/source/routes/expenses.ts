@@ -1,9 +1,9 @@
 /** source/routes/posts.ts */
-import express from 'express';
-import controller from '../controllers/expenses';
+import express from "express";
+import controller from "../controllers/expenses";
 const router = express.Router();
 
-router.get('/transactions', controller.getTransactions);
+router.get("/transactions", controller.getTransactions);
 // router.get('/posts/:id', controller.getPost);
 // router.put('/posts/:id', controller.updatePost);
 // router.delete('/posts/:id', controller.deletePost);
